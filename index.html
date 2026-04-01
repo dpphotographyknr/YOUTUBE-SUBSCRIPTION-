@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YT Subscription</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+button {
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background: red;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#loading {
+  display: none;
+  font-size: 22px;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+#message {
+  display: none;
+  font-size: 32px;
+  margin-top: 30px;
+  color: #ff3333;
+  font-weight: bold;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Subscribe to Continue</h1>
+  <button onclick="startPrank()">SUBSCRIBE</button>
+  
+  <div id="loading">Processing your subscription...</div>
+  <div id="message">PODA ABHINAV VANAME 😆</div>
+</div>
+
+<!-- Sound -->
+<audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+<script>
+function startPrank() {
+  document.querySelector("button").style.display = "none";
+  document.getElementById("loading").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("message").style.display = "block";
+    document.getElementById("sound").play();
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
